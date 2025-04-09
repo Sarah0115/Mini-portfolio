@@ -1,0 +1,186 @@
+/* Main styles */
+.app {
+  min-height: 100vh;
+  padding: 0 15px;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  h1 {
+    color: $title;
+    font-size: 40px;
+    text-align: center;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
+
+  &__description {
+    font-size: 1rem;
+    color: $text-secondary;
+  }
+  &__main {
+    max-width: 1280px;
+    margin: 40px auto;
+  }
+  &__intro{
+    margin: 30px 10px;
+    text-align: center;
+    
+  }
+
+}
+.app--dark {
+  background-color: $blue;
+  background-image: url('/public/images/shadow.png');
+  background-size: cover;
+  color: $white;
+  .app__header {
+    border-color: $white;
+  }
+  .project-card {
+    background: $card-bg-dark;
+    box-shadow: 0 4px 8px $card-shadow;
+  }
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: $bg;
+  color: $text;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  
+}
+
+a {
+  color: $accent;
+  text-decoration: none;
+}
+a:hover{
+  color: $title;
+}
+
+
+img {
+  max-width: 100%;
+  display: block;
+  border-radius: 0.5rem;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  background-color: $blue;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $text;
+  }
+}
+
+/* Project Section */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: $card-bg;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px $card-shadow;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px $card-shadow;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    margin-top: 0.75rem;
+    font-weight: 600;
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    opacity: 0.85;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: $accent;
+    font-weight: bold;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    background: $bg;
+    color: $text;
+    padding: 2rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  }
+
+  button {
+    margin-top: 1rem;
+    background: $accent;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+/* Responsive Extras */
+@media (max-width: 600px) {
+  .header__title {
+    font-size: 1.25rem;
+  }
+
+  .project-card__title {
+    font-size: 1rem;
+  }
+}
