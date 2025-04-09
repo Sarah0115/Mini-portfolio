@@ -1,17 +1,25 @@
-
 <template>
   <button class="toggle" @click="$emit('toggle')">
     <div class="toggle__container">
-      <span :class="isDark ? 'dark' : ''" v-text="isDark ? 'Light Mode' : 'Dark Mode'"></span>
-      <img src="/toggle.png" alt="Dark Mode" class="toggle__container-img">
-  </div>
-    
+      <span
+        :class="['toggle__label', { 'toggle__label--dark': isDark }]"
+        v-text="isDark ? 'Light Mode' : 'Dark Mode'"
+      ></span>
+      <img
+        src="/toggle.png"
+        alt="Dark Mode"
+        class="toggle__icon"
+      />
+    </div>
   </button>
 </template>
-<script>
-export default {
-  props: ['project', 'isDark']
-};
+
+<script setup>
+defineProps({
+  isDark: Boolean
+})
+
+defineEmits(['toggle'])
 </script>
 
 <style lang="scss" scoped>
@@ -19,25 +27,32 @@ export default {
 .toggle {
   background: none;
   border: none;
-  font-size: 0.8rem;
   cursor: pointer;
+  font-size: 0.8rem;
   display: flex;
   justify-self: end;
-  align-items: end;
+  align-items: flex-end;
   flex-direction: column;
   margin: 5px 10px;
-  &__container{
+
+  &__container {
     display: flex;
     align-items: center;
     color: $blue;
-    .dark{
+  }
+
+  &__label {
+    transition: color 0.3s ease;
+
+    &--dark {
       color: $white;
     }
   }
-  &__container-img{
+
+  &__icon {
     width: 35px;
     height: 35px;
-    margin: 0 10px;
+    margin-left: 10px;
   }
 }
 </style>

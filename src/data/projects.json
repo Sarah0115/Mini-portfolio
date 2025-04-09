@@ -1,24 +1,23 @@
-
 [
   {
     "id": 1,
     "title": "Project Aurora",
     "image": "/images/project1.jpg",
-    "description": "This princess loves to play and sleep whenever her owner is, choose her if you prefer very close and lovely company.",
+    "description": "This princess loves to play and nap wherever her owner is. Choose her if you enjoy affectionate and constant companionship.",
     "link": "#"
   },
   {
     "id": 2,
     "title": "DataViz Dash",
     "image": "/images/project2.jpg",
-    "description": "This strong boy makes you feel safe, he will always take care of you and keep your hearth and felings safe.",
+    "description": "This strong boy will make you feel safe — always looking out for you and protecting your heart and feelings.",
     "link": "#"
   },
   {
     "id": 3,
     "title": "Lazy Tony",
     "image": "/images/project3.jpg",
-    "description": "If you are more of a quiet lazy weekend, Tony is the perfect company for the those days you dont want to see people",
+    "description": "If you’re into quiet, lazy weekends, Tony is the perfect companion for those days when you don’t want to see anyone.",
     "link": "#"
   }
 ]

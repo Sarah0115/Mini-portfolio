@@ -7,10 +7,10 @@
     </header>
     <main class="app__main">
       <div class="app__intro">
-        I've created a portfolio of cats, at the end of the day they are more entertained that real projects that you 
-        can not interact with, if you actually want to see some cats, I meant projects (or the few I could rescue),
-        here <a href="https://sarahp0115.blogspot.com/"> some pictures of those</a> 
-      </div>
+        I've created a portfolio of cats — because, let’s be honest, they’re way more entertaining than real projects you can't even interact with.  
+        If you actually want to see some cats — I mean, *projects* (or at least the few I managed to rescue) —  
+        check out <a href="https://sarahp0115.blogspot.com/">some pictures over here</a>.
+    </div>
       <section class="projects">
         <ProjectCard v-for="project in projects" :key="project.id" :project="project" @open="openModal" class="project-card"/>
       </section>
@@ -19,28 +19,26 @@
   </div>
 </template>
 
-<script>
-import projects from './data/projects.json';
-import ProjectCard from './components/ProjectCard.vue';
-import ProjectModal from './components/ProjectModal.vue';
-import DarkModeToggle from './components/DarkModeToggle.vue';
 
-export default {
-  components: { ProjectCard, ProjectModal, DarkModeToggle },
-  data() {
-    return {
-      projects,
-      selectedProject: null,
-      isDark: false
-    };
-  },
-  methods: {
-    openModal(project) {
-      this.selectedProject = project;
-    },
-    toggleDarkMode() {
-      this.isDark = !this.isDark;
-    }
-  }
-};
+<script setup>
+import { ref } from 'vue'
+import projects from '@/data/projects' 
+import ProjectCard from '@/components/ProjectCard.vue'
+import ProjectModal from '@/components/ProjectModal.vue'
+import DarkModeToggle from '@/components/DarkModeToggle.vue'
+
+const selectedProject = ref(null)
+const isDark = ref(false)
+
+
+function openModal(project) {
+  selectedProject.value = project
+}
+
+function toggleDarkMode() {
+  isDark.value = !isDark.value
+}
 </script>
+
+
+
